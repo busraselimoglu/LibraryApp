@@ -42,7 +42,6 @@ class BookListViewModel(application: Application) : BaseViewModel(application) {
         launch {
             val booklist = BookDatabase(getApplication()).bookbaseDao().getALLBook()
             showBook(booklist)
-            Toast.makeText(getApplication(),"Kitapları Room'dan Aldık", Toast.LENGTH_LONG).show()
         }
     }
     private fun getDataInternet(){
@@ -56,7 +55,6 @@ class BookListViewModel(application: Application) : BaseViewModel(application) {
                     override fun onSuccess(t: List<Book>) {
                         // Başarılı olursa
                         hideSQLite(t)
-                        Toast.makeText(getApplication(),"Kitapları Internet'ten Aldık",Toast.LENGTH_LONG).show()
                     }
                     override fun onError(e: Throwable) {
                         //Hata alırsak
