@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/book_graph"
+        app:startDestination="@id/BookList"
+>
+    <fragment
+            android:id="@+id/BookList"
+            android:name="com.busra.libraryapp.view.BookList"
+            android:label="fragment_book_list"
+            tools:layout="@layout/fragment_book_list">
+        <action
+            android:id="@+id/action_book_list_to_book_detail"
+            app:destination="@+id/BookDetail"/>
+    </fragment>
+    <fragment
+            android:id="@+id/BookDetail"
+            android:name="com.busra.libraryapp.view.BookDetail"
+            android:label="fragment_book_detail"
+            tools:layout="@layout/fragment_book_detail">
+        <action
+            android:id="@+id/action_book_detail_to_book_list"
+            app:destination="@+id/BookList"/>
+        <argument android:name="bookID" app:argType="integer" android:defaultValue="0"/>
+    </fragment>
+
+</navigation>
